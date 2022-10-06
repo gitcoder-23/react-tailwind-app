@@ -14,7 +14,7 @@ const Navbar = () => {
     setNavOps(!navOps);
   };
   useEffect(() => {
-    setNavOps(!navOps);
+    setNavOps(navOps);
   }, []);
 
   return (
@@ -32,9 +32,9 @@ const Navbar = () => {
       </ul>
       <div onClick={handleNav} className="block md:hidden">
         {!navOps ? (
-          <AiOutlineClose size={20} />
-        ) : (
           <AiOutlineMenuFold size={20} />
+        ) : (
+          <AiOutlineClose size={20} />
         )}
       </div>
       {/* <div className="fixed left-0 top-0 w-[60%] h-full border-r border-r-grey-900
@@ -42,7 +42,7 @@ const Navbar = () => {
        bg-[#000300]"> */}
       <div
         className={
-          !navOps
+          navOps
             ? `fixed left-0 top-0 w-[60%] h-full border-r border-r-grey-900
         bg-[#000300] ease-in-out duration-500`
             : `fixed left-[-100%]`
